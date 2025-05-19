@@ -17,6 +17,6 @@ export async function GET(request: NextRequest, props: { params: Promise<{ dataI
     const details = await get<{ dataId: string, pdfUrl: string}[]>(config,userContext, `/datatraveler/import/logs/${params.dataImportId}/data`);
     return NextResponse.json({...result, details});
   }else{
-    return NextResponse.json({...result});
+    return NextResponse.json({...result, details:[]});
   }
 }
