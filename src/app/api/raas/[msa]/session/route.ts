@@ -21,9 +21,20 @@ export async function PATCH(request: NextRequest, { params }: { params: { msa: s
 }
 
 async function handleSessionRequest(request: NextRequest, msa: string) {
-  return NextResponse.json({
-    application: msa,
-    url: '',
-    newUrl: ''
-  });
+  try {
+    const body = await request.json();
+    const { subUrl, backUrl } = body;
+    
+    return NextResponse.json({
+      application: msa,
+      url: `/raas/${msa}${subUrl || ''}`,
+      newUrl: backUrl || ''
+    });
+  } catch (error) {
+    console.error('Error handling session request:', error);
+    return NextResponse.json(
+      { error: 'Invalid request body' },
+      { status: 400 }
+    );
+  }
 }
