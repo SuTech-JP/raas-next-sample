@@ -16,17 +16,18 @@ export default function ImportGalleryPage() {
     createGallerySession(APPLICATION, SCHEMA).then(setSession)
   }, [])
 
-  const onCreateLayout = () => router.push('/designer/new')
-  const onEditLayout = (layoutId: number) => router.push(`/designer/edit/${layoutId}`)
+  const onSelectLayout = (layoutId: number | undefined) => {
+    if (!layoutId) return
+    router.push(`./${layoutId}`)
+  }
   
   return (
     <ReportLayoutGallery
       session={session}
-      onCreateLayout={onCreateLayout}
-      onEditLayout={onEditLayout}
-      deletable
+      onSelectLayout={onSelectLayout}
       height={`calc(100vh - ${HEIGHT_OFFSET}px)`}
       customStyles={customStyles}
+      mode={'operation'}
     />
   )
 }
