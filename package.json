@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@sutech-jp/datatraveler-react-client": "^0.1.17",
-    "@sutech-jp/raas-client-for-typescript": "^0.2.0",
+    "@sutech-jp/raas-client-for-typescript": "^0.3.0",
     "@sutech-jp/raas-react-client": "^0.1.20",
     "next": "15.3.2",
     "react": "^19.0.0",

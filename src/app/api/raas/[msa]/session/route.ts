@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createSession, RaasSessionRequest } from '@sutech-jp/raas-client-for-typescript';
+import { getRaasConnectionConfig, getRaasUserContext } from '@/config/raas';
 
 export async function GET(request: NextRequest, { params }: { params: { msa: string } }) {
   return handleSessionRequest(request, params.msa);
@@ -25,16 +27,29 @@ async function handleSessionRequest(request: NextRequest, msa: string) {
     const body = await request.json();
     const { subUrl, backUrl } = body;
     
-    return NextResponse.json({
-      application: msa,
-      url: `/raas/${msa}${subUrl || ''}`,
-      newUrl: backUrl || ''
-    });
+    if (!backUrl) {
+      return NextResponse.json(
+        { error: 'backUrl is required' },
+        { status: 400 }
+      );
+    }
+    
+    const sessionRequest: RaasSessionRequest = {
+      mas: msa as 'report' | 'datatraveler',
+      backUrl,
+      subUrl,
+    };
+    
+    const config = getRaasConnectionConfig();
+    const userContext = getRaasUserContext();
+    
+    const session = await createSession(config, userContext, sessionRequest);
+    return NextResponse.json(session);
   } catch (error) {
     console.error('Error handling session request:', error);
     return NextResponse.json(
-      { error: 'Invalid request body' },
-      { status: 400 }
+      { error: 'Failed to create session' },
+      { status: 500 }
     );
   }
 }
