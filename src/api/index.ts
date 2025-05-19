@@ -48,7 +48,11 @@ const createReportSession = async (subUrl: string): Promise<Session> => {
 }
 
 const createRaasSession = async (msa: 'datatraveler' | 'report', subUrl: string): Promise<Session> => {
-  return await fetch(BACKEND_URL + `/api/raas/${msa}/session`, {
+  const apiUrl = BACKEND_URL?.endsWith('/api') 
+    ? `${BACKEND_URL}/raas/${msa}/session`
+    : `${BACKEND_URL}/api/raas/${msa}/session`;
+    
+  return await fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
