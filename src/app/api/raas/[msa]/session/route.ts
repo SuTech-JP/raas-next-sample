@@ -1,24 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createSession, RaasSessionRequest } from '@sutech-jp/raas-client-for-typescript';
-import { getRaasConnectionConfig, getRaasUserContext } from '@/config/raas';
+import { getRaasConnectionConfig } from '@/config/raas';
 
-export async function GET(request: NextRequest, { params }: { params: { msa: string } }) {
-  return handleSessionRequest(request, params.msa);
-}
+const config = getRaasConnectionConfig(); //設定情報
 
-export async function POST(request: NextRequest, { params }: { params: { msa: string } }) {
-  return handleSessionRequest(request, params.msa);
-}
-
-export async function PUT(request: NextRequest, { params }: { params: { msa: string } }) {
-  return handleSessionRequest(request, params.msa);
-}
-
-export async function DELETE(request: NextRequest, { params }: { params: { msa: string } }) {
-  return handleSessionRequest(request, params.msa);
-}
-
-export async function PATCH(request: NextRequest, { params }: { params: { msa: string } }) {
+export async function POST(request: NextRequest, props: { params: Promise<{ msa: string }> }) {
+  const params = await props.params;
   return handleSessionRequest(request, params.msa);
 }
 
@@ -40,8 +27,10 @@ async function handleSessionRequest(request: NextRequest, msa: string) {
       subUrl,
     };
     
-    const config = getRaasConnectionConfig();
-    const userContext = getRaasUserContext();
+    const userContext = {    //実際には認証情報を利用する
+      tenant: 'sample',
+      sub: 'sample-user01',
+  };
     
     const session = await createSession(config, userContext, sessionRequest);
     return NextResponse.json(session);

@@ -6,7 +6,7 @@ import { deleteTenant } from '../api'
 export default function Home() {
   return (
     <div className="p-5">
-      <h1 className="text-2xl font-bold mb-4">Next.js + React + TS Raas Sample</h1>
+      <h1 className="text-2xl font-bold mb-4">Next.js Raas(FE+BE) Sample</h1>
       <ul className="list-none p-0">
         <li className="my-2">
           <Link href="/import/gallery" className="text-blue-600 hover:underline">インポート(ギャラリー)</Link>
