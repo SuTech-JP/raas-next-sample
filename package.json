@@ -10,9 +10,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\""
   },
   "dependencies": {
-    "@sutech-jp/datatraveler-react-client": "^0.1.17",
     "@sutech-jp/raas-client-for-typescript": "^0.5.0",
-    "@sutech-jp/raas-react-client": "^0.1.20",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
