@@ -28,7 +28,15 @@ export default function ResultPage() {
           <li key={index} className="mb-4 p-4 border border-gray-200 rounded">
             <div className="mb-2">データID: {detail.dataId}</div>
             <div>
-              PDF: <a href={detail.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">表示</a>
+              PDF:{' '}
+              <a
+                href={detail.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                表示
+              </a>
             </div>
           </li>
         ))}

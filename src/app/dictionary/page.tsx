@@ -14,11 +14,5 @@ export default function DictionaryPage() {
     createDictionarySession().then(setSession)
   }, [])
 
-  return (
-    <ReportTenantInfo
-      session={session}
-      height={`calc(100vh - ${HEIGHT_OFFSET}px)`}
-      customStyles={customStyles}
-    />
-  )
+  return <ReportTenantInfo session={session} height={`calc(100vh - ${HEIGHT_OFFSET}px)`} customStyles={customStyles} />
 }

@@ -20,7 +20,7 @@ export default function ImportGalleryPage() {
     if (!layoutId) return
     router.push(`./${layoutId}`)
   }
-  
+
   return (
     <ReportLayoutGallery
       session={session}

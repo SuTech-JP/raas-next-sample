@@ -19,12 +19,6 @@ export default function DesignerEditPage() {
   }, [params.layoutId])
 
   if (!params.layoutId) return <div>Layout ID is required</div>
-  
-  return (
-    <ReportDesigner
-      session={session}
-      height={`calc(100vh - ${HEIGHT_OFFSET}px)`}
-      customStyles={customStyles}
-    />
-  )
+
+  return <ReportDesigner session={session} height={`calc(100vh - ${HEIGHT_OFFSET}px)`} customStyles={customStyles} />
 }

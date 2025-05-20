@@ -14,11 +14,5 @@ export default function OrganizerPage() {
     createOrganizerSession(ORGANIZER_APPLICATION, ORGANIZER_SCHEMA).then(setSession)
   }, [])
 
-  return (
-    <ReportOrganizer
-      session={session}
-      height={`calc(100vh - ${HEIGHT_OFFSET}px)`}
-      customStyles={customStyles}
-    />
-  )
+  return <ReportOrganizer session={session} height={`calc(100vh - ${HEIGHT_OFFSET}px)`} customStyles={customStyles} />
 }

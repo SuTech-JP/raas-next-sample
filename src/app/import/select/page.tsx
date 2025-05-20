@@ -19,7 +19,7 @@ export default function ImportSelectLayoutsPage() {
       <ul className="list-none p-0">
         {layouts.map((layout) => (
           <li key={layout.id} className="my-2">
-            <button 
+            <button
               onClick={() => router.push(`/import/${layout.id}`)}
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
