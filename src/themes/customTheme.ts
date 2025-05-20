@@ -1,11 +1,11 @@
-import { ThemeOptions } from "@sutech-jp/raas-react-client";
+import { ThemeOptions } from '@sutech-jp/raas-react-client'
 
 /**
  * Theme options that can be applied to RaaS components as "Custom Styles".
  * To apply the styles, set it to "customStyles" attribute of each component.
- * 
+ *
  * e.g.) <ReportLayoutGallery customStyles={customStyles} {...restProps} />
- * 
+ *
  * Following definition is same as the styles provided by RaaS UI System.
  * Change the properties as you want to overwrite.
  */
@@ -62,36 +62,176 @@ export const customStyles: ThemeOptions = {
       A200: '#BABFCA',
       A400: '#838995',
       A700: '#4B5361',
-    }
+    },
   },
   typography: {
-    pageTitle: { fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.2, color: '#333333' },
-    dialogTitle: { fontSize: '1.25rem', fontWeight: 400, lineHeight: 1.2, color: '#333333' },
-    subheadM: { fontSize: '0.875rem', fontWeight: 700, lineHeight: 1.2, color: '#333333' },
-    subheadL: { fontSize: '1rem', fontWeight: 700, lineHeight: 1.2, color: '#333333' },
-    textNormal: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, color: '#333333' },
-    textStrong: { fontSize: '0.875rem', fontWeight: 700, lineHeight: 1.5, color: '#333333' },
-    textSupplement: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, color: '#7f7f7f' },
-    textHint: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, color: '#AAAAAA' },
-    labelNormal: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.2, color: '#7f7f7f' },
-    labelError: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.2, color: '#D34C5C' },
-    labelSmall: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.2, color: '#7f7f7f' },
-    labelSmallActive: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.2, color: '#1B6FD3' },
-    labelSmallError: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.2, color: '#D34C5C' },
-    textPrimary: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, color: '#1B6FD3' },
-    textStrongPrimary: { fontSize: '0.875rem', fontWeight: 700, lineHeight: 1.5, color: '#1B6FD3' },
-    textError: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, color: '#D34C5C' },
-    textStrongError: { fontSize: '0.875rem', fontWeight: 700, lineHeight: 1.5, color: '#D34C5C' },
-    textWarning: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, color: '#E27822' },
-    textStrongWarning: { fontSize: '0.875rem', fontWeight: 700, lineHeight: 1.5, color: '#E27822' },
-    textSuccess: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, color: '#189F71' },
-    textStrongSuccess: { fontSize: '0.875rem', fontWeight: 700, lineHeight: 1.5, color: '#189F71' },
-    textWhite: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, color: '#FFFFFF' },
-    groupHeader: { fontSize: '0.75rem', fontWeight: 700, lineHeight: 1.2, color: '#7f7f7f' },
-    caption: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.2, color: '#333333' },
-    subtextNormal: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.5, color: '#7f7f7f' },
-    subtextWhite: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.5, color: '#FFFFFF' },
-    toggleNormal: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.2, color: '#7f7f7f' },
-    togglePrimary: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.2, color: '#1B6FD3' },
+    pageTitle: {
+      fontSize: '1.25rem',
+      fontWeight: 700,
+      lineHeight: 1.2,
+      color: '#333333',
+    },
+    dialogTitle: {
+      fontSize: '1.25rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#333333',
+    },
+    subheadM: {
+      fontSize: '0.875rem',
+      fontWeight: 700,
+      lineHeight: 1.2,
+      color: '#333333',
+    },
+    subheadL: {
+      fontSize: '1rem',
+      fontWeight: 700,
+      lineHeight: 1.2,
+      color: '#333333',
+    },
+    textNormal: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#333333',
+    },
+    textStrong: {
+      fontSize: '0.875rem',
+      fontWeight: 700,
+      lineHeight: 1.5,
+      color: '#333333',
+    },
+    textSupplement: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#7f7f7f',
+    },
+    textHint: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#AAAAAA',
+    },
+    labelNormal: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#7f7f7f',
+    },
+    labelError: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#D34C5C',
+    },
+    labelSmall: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#7f7f7f',
+    },
+    labelSmallActive: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#1B6FD3',
+    },
+    labelSmallError: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#D34C5C',
+    },
+    textPrimary: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#1B6FD3',
+    },
+    textStrongPrimary: {
+      fontSize: '0.875rem',
+      fontWeight: 700,
+      lineHeight: 1.5,
+      color: '#1B6FD3',
+    },
+    textError: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#D34C5C',
+    },
+    textStrongError: {
+      fontSize: '0.875rem',
+      fontWeight: 700,
+      lineHeight: 1.5,
+      color: '#D34C5C',
+    },
+    textWarning: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#E27822',
+    },
+    textStrongWarning: {
+      fontSize: '0.875rem',
+      fontWeight: 700,
+      lineHeight: 1.5,
+      color: '#E27822',
+    },
+    textSuccess: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#189F71',
+    },
+    textStrongSuccess: {
+      fontSize: '0.875rem',
+      fontWeight: 700,
+      lineHeight: 1.5,
+      color: '#189F71',
+    },
+    textWhite: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#FFFFFF',
+    },
+    groupHeader: {
+      fontSize: '0.75rem',
+      fontWeight: 700,
+      lineHeight: 1.2,
+      color: '#7f7f7f',
+    },
+    caption: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#333333',
+    },
+    subtextNormal: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#7f7f7f',
+    },
+    subtextWhite: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: 1.5,
+      color: '#FFFFFF',
+    },
+    toggleNormal: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#7f7f7f',
+    },
+    togglePrimary: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      color: '#1B6FD3',
+    },
   },
 }

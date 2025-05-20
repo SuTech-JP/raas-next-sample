@@ -34,11 +34,16 @@ export default function ImportPage() {
   if (!params.layoutId) return <></>
   if (!partners) return <div>Loading partners...</div>
   if (!company) return <div>Loading company...</div>
-  
+
   return (
     <DataTravelerImport
       session={session}
-      report={{ layoutId: Number(params.layoutId), application: APPLICATION, schema: SCHEMA, reportStep: 'preview' }}
+      report={{
+        layoutId: Number(params.layoutId),
+        application: APPLICATION,
+        schema: SCHEMA,
+        reportStep: 'preview',
+      }}
       application={APPLICATION}
       schema={SCHEMA}
       mapper={{ sample_partners: partners }}

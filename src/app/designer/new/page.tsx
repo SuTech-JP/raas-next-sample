@@ -14,11 +14,5 @@ export default function DesignerNewPage() {
     createDesignerNewSession(APPLICATION, SCHEMA).then(setSession)
   }, [])
 
-  return (
-    <ReportDesigner
-      session={session}
-      height={`calc(100vh - ${HEIGHT_OFFSET}px)`}
-      customStyles={customStyles}
-    />
-  )
+  return <ReportDesigner session={session} height={`calc(100vh - ${HEIGHT_OFFSET}px)`} customStyles={customStyles} />
 }

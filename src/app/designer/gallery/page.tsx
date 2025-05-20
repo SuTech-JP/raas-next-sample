@@ -18,7 +18,7 @@ export default function DesignerGalleryPage() {
 
   const onCreateLayout = () => router.push('/designer/new')
   const onEditLayout = (layoutId: number) => router.push(`/designer/edit/${layoutId}`)
-  
+
   return (
     <ReportLayoutGallery
       session={session}

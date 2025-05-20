@@ -14,11 +14,5 @@ export default function LogoPage() {
     createLogoSession().then(setSession)
   }, [])
 
-  return (
-    <ReportConfig
-      session={session}
-      height={`calc(100vh - ${HEIGHT_OFFSET}px)`}
-      customStyles={customStyles}
-    />
-  )
+  return <ReportConfig session={session} height={`calc(100vh - ${HEIGHT_OFFSET}px)`} customStyles={customStyles} />
 }
