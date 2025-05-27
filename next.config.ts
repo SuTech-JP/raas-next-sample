@@ -4,6 +4,7 @@ const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN
 
 const nextConfig: NextConfig = {
   async headers() {
+    console.log('FRONTEND_ORIGIN:', FRONTEND_ORIGIN)
     return [
       {
         source: '/api/:path*', // API ルートにマッチ
