@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createSession, RaasSessionRequest } from '@sutech-jp/raas-client-for-typescript'
+import { createSession, RaasSessionRequest } from '@sutech_jp/raas-client-for-typescript'
 import { getRaasConnectionConfig } from '@/config/raas'
 
 const config = getRaasConnectionConfig() //設定情報
@@ -19,7 +19,7 @@ async function handleSessionRequest(request: NextRequest, msa: string) {
     }
 
     const sessionRequest: RaasSessionRequest = {
-      mas: msa as 'report' | 'datatraveler',
+      msa: msa as 'report' | 'datatraveler',
       backUrl,
       subUrl,
     }
