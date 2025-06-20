@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getRaasConnectionConfig } from '@/config/raas'
-import { get } from '@sutech-jp/raas-client-for-typescript'
+import { get } from '@sutech_jp/raas-client-for-typescript'
 const config = getRaasConnectionConfig() //設定情報
 
 export async function GET(request: NextRequest, props: { params: Promise<{ dataImportId: string }> }) {

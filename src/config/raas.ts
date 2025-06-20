@@ -1,4 +1,4 @@
-import { RaasConnectionConfig } from '@sutech-jp/raas-client-for-typescript'
+import { RaasConnectionConfig } from '@sutech_jp/raas-client-for-typescript'
 
 export const getRaasConnectionConfig = (): RaasConnectionConfig => {
   if (!process.env.RAAS_APP || !process.env.RAAS_TOKEN) {
